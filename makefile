@@ -1,5 +1,5 @@
 CC=gcc 
-all_sources=gif.c ico.c  
+all_sources=gif.c main.c  
 all_objs=$(all_sources:.c=.o) 
 
 my_project: $(all_objs)
