@@ -3,7 +3,7 @@
 void store(const char *argv)
 {	
 	char ch;
-	FILE *fpr;				// Points to file memory
+	FILE *fpr;										// Points to file memory
 	GIFHEAD *gHead = (GIFHEAD*)malloc(sizeof(GIFHEAD));	
 	fpr = fopen(argv,"rb");
 
