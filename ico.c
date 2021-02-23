@@ -66,7 +66,8 @@ int main(int argc, char* argv[])
 	I.no_of_img =1;
 	fwrite(&I,sizeof(struct ICONDIR),1,fp);
 	
-
+	
+	
    
 	
 	//Icon direntry

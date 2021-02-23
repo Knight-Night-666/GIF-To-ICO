@@ -8,5 +8,5 @@ my_project: $(all_objs)
 	$(CC) -c $(all_sources) 
 
 clean:		
-	rm my_project *.o
+	rm my_project *.o RGB_data.gif
 

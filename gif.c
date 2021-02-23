@@ -73,17 +73,16 @@ void store(const char *argv)
 	fseek(fpr,0,SEEK_END);
 	long int img_end=ftell(fpr);
 	fseek(fpr,img_start+1,SEEK_SET);
-	
+	long int img_st=img_start-1;
+	c=fgetc(fpr);
+	fwrite((table+c),sizeof(GIFCOLORTABLE),1,fp2);
 	while(ftell(fpr)<img_end-4)
-	{		
-			if((int)getc(fpr)==(gHead->ScreenHeight+1))
-			{
-				fseek(fpr,1,SEEK_CUR);
-				continue;
-			}
-			fseek(fpr,-1,SEEK_CUR);
-			c=getc(fpr);
+	{		if((ftell(fpr)-img_st)%46==0)
+				fseek(fpr,2,SEEK_CUR);
+			
+			c=fgetc(fpr);
 			fwrite((table+c),sizeof(GIFCOLORTABLE),1,fp2);
+
 	}
 	free(gImgDes);
 	free(gHead);
